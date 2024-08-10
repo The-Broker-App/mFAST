@@ -30,15 +30,11 @@ include(FastTypeGenTarget)
 
 # dependencies
 find_package(Boost 1.56.0 REQUIRED)
+find_package(tinyxml2 CONFIG REQUIRED)
 
 add_compile_definitions(SIZEOF_VOID_P=${CMAKE_SIZEOF_VOID_P})
 
 add_subdirectory (src)
-
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory (tests)
-endif(BUILD_TESTS)
 
 if(BUILD_EXAMPLES)
   add_subdirectory (examples)
